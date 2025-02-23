@@ -15,6 +15,10 @@ class LOCATIONOCTREEDEMO_API UBPLib : public UObject
 	GENERATED_BODY()
 
 	UFUNCTION(BlueprintCallable, Category = "BPLib", meta = (WorldContext = "InWorldContextObject"))
-	static AActor* GetNearlyActorForeach(const FVector& InLocation, float InRadius, TSubclassOf<AActor> InActorClass,
+	static AActor* GetNearlyActorForeach(const FVector& InLocation, TSubclassOf<AActor> InActorClass,
 	                                     const UObject* InWorldContextObject, bool bDrawDebug = false);
+
+	UFUNCTION(BlueprintCallable, Category = "BPLib", meta = (WorldContext = "InWorldContextObject"))
+	static AActor* GetNearlyVisibleActorForeach(const FVector& InLocation, TSubclassOf<AActor> InActorClass,
+										 const UObject* InWorldContextObject, ECollisionChannel InTraceChannel, bool bDrawDebug = false);
 };
